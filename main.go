@@ -141,7 +141,7 @@ func (w Walking) Calories() float64 {
 	// вставьте ваш код ниже
 	speedKmH := w.meanSpeed()
 	speedMsec := speedKmH * KmHInMsec // конвертация в м/с
-	return ((CaloriesWeightMultiplier * w.Weight) + (math.Pow(speedMsec, 2)/(w.Height/100))*CaloriesSpeedHeightMultiplier*w.Weight) * (w.Duration.Hours() * 60)
+	return ((CaloriesWeightMultiplier * w.Weight) + (math.Pow(speedMsec, 2)/(w.Height/CmInM))*CaloriesSpeedHeightMultiplier*w.Weight) * (w.Duration.Hours() * MinInHours)
 }
 
 // TrainingInfo возвращает структуру InfoMessage с информацией о проведенной тренировке.
